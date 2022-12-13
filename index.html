@@ -5,91 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>记忆练习 -『皇家娱乐』</title>
-	<style>
-		* {
-			padding: 0;
-			margin: 0;
-			position: relative;
-			font-size: 2.5vh;
-		}
-
-		.HMain {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: #3bf;
-		}
-
-		.HHead {
-			background: #000;
-			color: #fff;
-			padding: 1vh;
-		}
-
-		.HHMt {
-			font-size: 9vw;
-		}
-
-		.HHDesc {
-			font-size: 6vw;
-			left: -2vh;
-		}
-
-		.HFoot {
-			position: fixed;
-			bottom: 0;
-			right: 0;
-			padding: 0.5vh;
-		}
-
-		.HMenu {
-			top: 10%;
-			text-align: center;
-		}
-
-		.HTitle {
-			font-size: 20vw;
-			text-shadow: #000 0.3vh 0 0, #000 0 0.3vh 0, #000 -0.3vh 0 0, #000 0 -0.3vh 0;
-			color: #ffffff;
-			text-decoration: underline;
-		}
-
-		.HBtn {
-			font-size: 10vw;
-			padding-left: 10vw;
-			padding-right: 10vw;
-			box-shadow: rgb(36, 139, 190) 0 0 8px 8px;
-		}
-
-		.HSetting {
-			text-align: left;
-			display: inline-block;
-		}
-
-		.HSetting td {
-			padding: 5px;
-			padding-top: 10px;
-		}
-
-		.HSetting input {
-			width: 3em;
-		}
-	</style>
-	<script type="text/javascript">
-		onload = () => {
-			let step, len, numOnly;
-			IStep.oninput = () => step = parseInt(IStep.value);
-			ILen.oninput = () => len = parseInt(ILen.value);
-			INumOnly.oninput = () => numOnly = INumOnly.checked;
-			IStart.onclick = () => { };
-		}
-	</script>
+	<link rel="stylesheet" href="src/style.css">
+	<script type="text/javascript" src="src/script.js"></script>
 </head>
 
 <body>
-	<div class="HMain">
+	<div class="HMain" name="DMain">
 		<div class="HHead">
 			<span class="HHMt">『皇家娱乐』</span>
 			<span class="HHDesc">练习本</span>
@@ -102,11 +23,11 @@
 			<table class="HSetting">
 				<tr>
 					<td>记忆跨度</td>
-					<td><input type="number" id="IStep" value="1" /></td>
+					<td><input type="number" id="IStep" /></td>
 				</tr>
 				<tr>
 					<td>内容长度</td>
-					<td><input type="number" id="ILen" value="1" /></td>
+					<td><input type="number" id="ILen" /></td>
 				</tr>
 				<tr>
 					<td>只含数字</td>

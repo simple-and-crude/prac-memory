@@ -25,9 +25,9 @@
 		for (const td of IKBox.getElementsByTagName('td')) td.innerHTML === '退格' ? td.onclick = () => idInput(10) : td.onclick = () => idInput(parseInt(td.innerText));
 		const next = (n) => {
 			if (n) { if (n._flag) return; else n._flag = true; }
-			counter++;
+			ICount.innerHTML = counter++;
 			const newMain = creE({ cln: 'HMain bodylike', dad: document.body });
-			creE({ tag: 'span', cln: 'HHMt', html: '成绩：' + (ICount.innerHTML = counter >= 0 ? counter : 0), dad: creE({ dad: newMain, cln: 'HHead' }) });
+			creE({ tag: 'span', cln: 'HHMt', html: '成绩：' + (counter >= 0 ? counter : 0), dad: creE({ dad: newMain, cln: 'HHead' }) });
 			newMain._display = ((node) => () => (node.innerHTML = ans[ans.push(random()) - 1], node.style.fontSize = size + 'vw'))(creE({ cln: 'HText', dad: newMain }));
 			counter >= 0 ? (counter > 0 && (IKBox.style.display = 'block'), ITip.innerHTML = counter) : creE({ tag: 'button', cln: 'HBtn HBottom', html: '下一个', act() { next(this) }, dad: newMain });
 			lastMain && (lastMain.style.right = '100vw');

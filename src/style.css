@@ -17,9 +17,11 @@ body {
 	bottom: 0;
 	background: #3bf;
 	transition: all 0.1s;
+	text-align: center;
 }
 
 .HHead {
+	text-align: left;
 	background: #000;
 	color: #fff;
 	padding: 1vh;
@@ -43,7 +45,6 @@ body {
 
 .HMenu {
 	top: 10%;
-	text-align: center;
 }
 
 .HTitle {
@@ -58,6 +59,10 @@ body {
 	padding-left: 10vw;
 	padding-right: 10vw;
 	box-shadow: rgb(36, 139, 190) 0 0 8px 8px;
+}
+
+.HBottom {
+	top: 10vh;
 }
 
 .HSetting {
@@ -76,6 +81,35 @@ body {
 
 .HText {
 	color: #ffffff;
-	text-align: center;
 	text-shadow: #000 0.3vh 0 0, #000 0 0.3vh 0, #000 -0.3vh 0 0, #000 0 -0.3vh 0;
+}
+
+#IKeybd {
+	font-family: 'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+#IKeybd table {
+	width: 100%;
+}
+
+#IKeybd td {
+	font-size: 8vh;
+	background: orange;
+	text-align: center;
+	user-select: none;
+}
+
+#IKeybd td:active {
+	background: darkorange;
+}
+
+#ICon {
+	background-color: #333;
+	color: yellowgreen;
+	overflow-wrap: break-word;
+	width: 100%;
 }

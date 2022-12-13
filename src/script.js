@@ -1,3 +1,9 @@
+(function () {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?6fe5d31c4f1a083a69e4a99cbed79158";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(hm, s);
+})();
 (() => {
 	let step = 2, len = 3, numOnly, counter, lastMain, ndMain, nextMain, size, ans = [];
 	const I = 'ById', N = 'sByName', T = 'sByTagName';

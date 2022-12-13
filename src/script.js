@@ -14,7 +14,6 @@
 		return dad ? dad.appendChild(node) : node;
 	};
 	onload = () => {
-		const [IStep, ILen, INumOnly, IStart, IKeybd, ICon] = getE(I, 'IStep', 'ILen', 'INumOnly', 'IStart', 'IKeybd', 'ICon');
 		const [DMain] = getE(N, 'DMain');
 		IStep.value = step, IStep.oninput = () => (step = getSetting(IStep), reset());
 		ILen.value = len, ILen.oninput = () => (len = getSetting(ILen), reset());
@@ -23,23 +22,19 @@
 		reset(), (nextMain = DMain[0])._display = () => 0, counter = - step - 1;
 		let con = [];
 		const idInput = (n) => (con[n === 10 ? 'pop' : 'push'](n), con.length === len && (con.join('') === ans[0] && (ans.shift(), next()), con = []), ICon.innerHTML = con.join('') + '_');
-		for (const td of IKeybd.getElementsByTagName('td')) td.innerHTML === '退格'
-			? td.onclick = () => idInput(10)
-			: td.onclick = () => idInput(parseInt(td.innerText));
-		const next = window.next = (n) => {
+		for (const td of IKBox.getElementsByTagName('td')) td.innerHTML === '退格' ? td.onclick = () => idInput(10) : td.onclick = () => idInput(parseInt(td.innerText));
+		const next = (n) => {
 			if (n) { if (n._flag) return; else n._flag = true; }
 			counter++;
-			const newMain = creE({ cln: 'HMain', dad: document.body });
-			creE({ tag: 'span', cln: 'HHMt', html: '成绩：' + (counter >= 0 ? counter : 0), dad: creE({ dad: newMain, cln: 'HHead' }) });
+			const newMain = creE({ cln: 'HMain bodylike', dad: document.body });
+			creE({ tag: 'span', cln: 'HHMt', html: '成绩：' + (ICount.innerHTML = counter >= 0 ? counter : 0), dad: creE({ dad: newMain, cln: 'HHead' }) });
 			newMain._display = ((node) => () => (node.innerHTML = ans[ans.push(random()) - 1], node.style.fontSize = size + 'vw'))(creE({ cln: 'HText', dad: newMain }));
-			counter >= 0
-				? (counter > 0 && nextMain.appendChild(IKeybd), ITip.innerHTML = counter)
-				: creE({ tag: 'button', cln: 'HBtn HBottom', html: '下一个', act() { next(this) }, dad: newMain });
+			counter >= 0 ? (counter > 0 && (IKBox.style.display = 'block'), ITip.innerHTML = counter) : creE({ tag: 'button', cln: 'HBtn HBottom', html: '下一个', act() { next(this) }, dad: newMain });
 			lastMain && (lastMain.style.right = '100vw');
 			nextMain && (nextMain.style.right = '0', nextMain._display());
 			ndMain && document.body.removeChild(ndMain);
 			[ndMain, lastMain, nextMain] = [lastMain, nextMain, newMain];
 		};
 		IStart.onclick = () => next(IStart), next();
-	}
+	};
 })();

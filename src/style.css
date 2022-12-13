@@ -9,12 +9,16 @@ body {
 	background: #000;
 }
 
-.HMain {
+.bodylike {
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	right: -100vw;
+	right: 0;
 	bottom: 0;
+}
+
+.HMain {
+	right: -100vw;
 	background: #3bf;
 	transition: all 0.1s;
 	text-align: center;
@@ -49,8 +53,6 @@ body {
 
 .HTitle {
 	font-size: 20vw;
-	text-shadow: #000 0.3vh 0 0, #000 0 0.3vh 0, #000 -0.3vh 0 0, #000 0 -0.3vh 0;
-	color: #ffffff;
 	text-decoration: underline;
 }
 
@@ -58,7 +60,7 @@ body {
 	font-size: 10vw;
 	padding-left: 10vw;
 	padding-right: 10vw;
-	box-shadow: rgb(36, 139, 190) 0 0 8px 8px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 0 8px 8px;
 }
 
 .HBottom {
@@ -84,7 +86,13 @@ body {
 	text-shadow: #000 0.3vh 0 0, #000 0 0.3vh 0, #000 -0.3vh 0 0, #000 0 -0.3vh 0;
 }
 
-#IKeybd {
+#IKBox {
+	text-align: center;
+	display: none;
+	z-index: 999;
+}
+
+.HKeybd {
 	font-family: 'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace;
 	position: fixed;
 	bottom: 0;
@@ -92,18 +100,17 @@ body {
 	left: 0;
 }
 
-#IKeybd table {
+.HKeybd table {
 	width: 100%;
 }
 
-#IKeybd td {
+.HKeybd td {
 	font-size: 8vh;
 	background: orange;
-	text-align: center;
 	user-select: none;
 }
 
-#IKeybd td:active {
+.HKeybd td:active {
 	background: darkorange;
 }
 
@@ -113,4 +120,31 @@ body {
 	overflow-wrap: break-word;
 	width: 100%;
 	font-size: 8vh;
+}
+
+#IExit {
+	position: fixed;
+	top: 2px;
+	right: 2px;
+	padding: 1vh;
+	font-size: 6vw;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 0 8px 8px;
+}
+
+#IMsgbox {
+	display: none;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 9999;
+}
+
+#IMsgbox div {
+	font-size: 12vw;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#IBoom {
+	display: none;
+	z-index: 99999;
+	background: #3bf;
 }

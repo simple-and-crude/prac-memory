@@ -10,9 +10,10 @@
 </head>
 
 <body>
-	<div style="display: none;">
-		<div id="IKeybd">
-			请输入第 <span id="ITip"></span> 个数
+	<div id="IKBox">
+		<button id="IExit" onclick="IMsgbox.style.display='block'">投<br />降</button>
+		<div class="HKeybd">
+			请输入第 <span id="ITip"></span> 次出现的数
 			<div id="ICon">_</div>
 			<table border="1">
 				<tr>
@@ -36,14 +37,34 @@
 				</tr>
 			</table>
 		</div>
+		<div id="IMsgbox" class="bodylike">
+			<div>
+				来投降吗？<br />
+				<button onclick="IMsgbox.style.display='none'" class="HBtn">不要</button>
+				<button onclick="IBoom.style.display='block'" class="HBtn">好的</button>
+			</div>
+		</div>
+		<div id="IBoom" class="bodylike">
+			<div class="HHead" id="IHead">
+				<span class="HHMt">你投降了</span>
+			</div>
+			<span class="HText" style="font-size: 8vw;">
+				<span style="font-size: 12vh;">哇!</span><br />
+				你成功记住了<br />
+				<span id="ICount" style="font-size: 30vw;"></span>个数<br />
+				再接再厉!<br /><br />
+				<button onclick="IHover.style.right = '0';setTimeout(() => location.href = location.href, 100)" class="HBtn">再来</button>
+			</span>
+		</div>
+		<div class="bodylike HMain" style="background: #000;z-index: 999999;" id="IHover"></div>
 	</div>
-	<div class="HMain" name="DMain">
+	<div class="HMain bodylike" name="DMain">
 		<div class="HHead" id="IHead">
 			<span class="HHMt">『皇家娱乐』</span>
 			<span class="HHDesc">练习本</span>
 		</div>
 		<div class="HMenu">
-			<div class="HTitle">记忆练习</div>
+			<div class="HTitle HText">记忆练习</div>
 			<br /><br />
 			<button class="HBtn" id="IStart">开始</button>
 			<br /><br />

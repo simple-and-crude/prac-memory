@@ -20,6 +20,8 @@
 		return dad ? dad.appendChild(node) : node;
 	};
 	onload = () => {
+		const HTML = document.getElementsByTagName('html')[0]
+		if (HTML.clientWidth >= HTML.clientHeight) alert('请把浏览器弄窄一点，或者避免横屏');
 		const [DMain] = getE(N, 'DMain');
 		IStep.value = step, IStep.oninput = () => (step = getSetting(IStep), reset());
 		ILen.value = len, ILen.oninput = () => (len = getSetting(ILen), reset());
